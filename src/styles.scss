@@ -1,1 +1,181 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+@use './app/styles_theme-colors.scss' as my-custom-theme;
+
+// This mixin ensures global styles like typography and component resets are applied.
+@include mat.core();
+
+@import "tailwindcss";
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: my-custom-theme.$primary-palette,
+      // secondary: my-custom-theme.$secondary-palette,
+      tertiary: my-custom-theme.$tertiary-palette,
+      // error: mat.$red-palette, // You can use a built-in palette for error
+    ),
+    typography: (
+      plain-family: Chivo,
+      brand-family: Shrikhand,
+      bold-weight: 700,
+      medium-weight: 500,
+      regular-weight: 400,
+    ),
+    density: 0, //0 to -5, -5 being the most compact
+  ));
+}/* You can add global styles to this file, and also import other style files */
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+:root {
+  @include mat.button-overrides((
+    container-color: map-get(my-custom-theme.$primary-palette, 80), //
+    filled-label-text-color: map-get(my-custom-theme.$tertiary-palette, 10), // Coal
+  ));
+
+  @include mat.icon-button-overrides((
+    icon-color: map-get(my-custom-theme.$primary-palette, 80), // Primary color
+    state-layer-color: map-get(my-custom-theme.$primary-palette, 40), // Primary color
+    ripple-color: map-get(my-custom-theme.$primary-palette, 95), // Primary color
+  ));
+}
+
+html, body { height: 100%; }
+body { 
+  color: #222;
+  font-family: Chivo, "Helvetica Neue", sans-serif;
+  margin: 0;
+  
+  h1 {
+    color: map-get(my-custom-theme.$tertiary-palette, 10);
+    font-family: Shrikhand, "Frank Ruhl Libre", serif;
+    font-size: 4.5rem;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+  }
+
+    h2 {
+    color: map-get(my-custom-theme.$tertiary-palette, 10);
+    font-family: Chivo, sans-serif;
+    font-size: 2.5rem;
+    font-style: italic;
+    font-weight: normal;
+    letter-spacing: -0.03em;
+    margin: 0;
+  }
+
+  h3 {
+    background-color: map-get(my-custom-theme.$secondary-palette, 60); // Pink
+    color: white;
+    font-family: Shrikhand, "Frank Ruhl Libre", serif;
+    font-size: 4rem;
+    font-weight: normal;
+    letter-spacing: -0.03em;
+    line-height: 114%;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-family: "Frank Ruhl Libre", serif;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  a {
+    color: map-get(my-custom-theme.$tertiary-palette, 10);
+    text-decoration: underline;
+    text-decoration-thickness: 12%;
+    text-underline-offset: 8%;
+    text-decoration-style: solid;
+    text-decoration-color: map-get(my-custom-theme.$primary-palette, 80);
+    transition: text-decoration-color 0.3s ease;
+
+    &:hover {
+      text-decoration-color: map-get(my-custom-theme.$secondary-palette, 60);
+    }
+  }
+
+  .mdc-button {
+    &.mat-icon-suffix {
+      display: flex;
+
+      .mat-icon{
+        margin-right: -8px;
+        margin-left: 8px;
+        order: 2;
+      }
+    }
+  }
+
+  .zig-zag-line {
+    background: linear-gradient(135deg, white 28%, transparent 28%) -14px 0, linear-gradient(225deg, white 28%, transparent 28%) -14px 0, linear-gradient(315deg, white 35%, transparent 28%), linear-gradient(45deg, white 35%, transparent 28%);
+    background-size: 28px 28px;
+    background-color: map-get(my-custom-theme.$neutral-palette, 80);
+    height: 28px;
+    margin: 24px 0
+  }
+
+  .zig-zag-banner {
+    background-color: map-get(my-custom-theme.$secondary-palette, 60);
+    line-height: 1;
+    padding: 22px 44px;
+    position: relative;
+
+    svg {
+      position: absolute;
+
+      path {
+        fill: map-get(my-custom-theme.$secondary-palette, 60);
+      }
+    }
+
+    .cap-left {
+      right: calc(100% - 2px);
+      top: 0;
+    }
+    .cap-right {
+      left: calc(100% - 2px);
+      top: 0;
+      transform: rotate(180deg);
+    }
+  }
+
+  .rich-tooltip {
+    background-color: map-get(my-custom-theme.$neutral-variant-palette, 95);
+    border-radius: 0.25em;
+    font-size: 1rem;
+    font-style: normal;
+    line-height: 140%;
+    padding: 0.75em;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    white-space: normal;
+    width: 100%;
+    z-index: 2;
+  }
+
+  /* Container for the router outlet */
+  main {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    .content {
+      height: 100%;
+
+      .router-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+<div class="about-content flex italic">
+  <div class="about-text flex flex-col max-w-1/2 px-34">
+    <div class="flex items-center text-4xl gap-2 flex-wrap whitespace-nowrap self-center">
+      <span>Hi, I'm Jackson Powell, a</span>
+      <span class="font-[Shrikhand] text-[40px]">UX/UI Designer</span>
+      <span>who can</span>
+      <span class="font-black text-[40px]">code.</span>
+      <span>I believe</span>
+      <div class="flex items-start relative">
+        <span class="font-black text-[40px]">details matter</span>
+        <button mat-icon-button role="button" aria-label="Icon button with a lightbulb icon"
+          (mouseenter)="showDetailsMatterTooltip = true" (mouseleave)="showDetailsMatterTooltip = false">
+          <mat-icon>emoji_objects</mat-icon>
+        </button>
+        @if (showDetailsMatterTooltip) {
+        <div class="rich-tooltip" [@richTooltipAnimation]>
+          Trust-building details, such as determining how long a system message should stay on the screen for
+          readability, how it should enter and leave using animation to capture attention, and more, enhance user
+          experience and create polished&nbsp;products.
+        </div>
+        }
+      </div>
+      <span class="mb-10">& I believe in</span>
+      <span class="font-black text-[40px] mb-10">doing the job right.</span>
+      <span>I'm passionate about</span>
+      <span class="font-black text-[40px]">designing</span>
+      <span>&</span>
+      <span class="font-black text-[40px]">programming</span>
+      <span>computer</span>
+      <span>interfaces and interactions for</span>
+      <span class="font-black text-[40px]">people</span>
+      <span>to</span>
+      <span class="font-black text-[40px]">get stuff done.</span>
+    </div>
+    <div class="zig-zag-line"></div>
+    <div class="font-[Frank-Ruhl-Libre] not-italic text-2xl">
+      Check out my work to see how we can build delightful user experiences together. Send me a <a href="#">text</a>
+      or connect on <a href="#">LinkedIn</a>.
+    </div>
+  </div>
+  <div class="about-svg" [@slideSvgDown]="svgState" (@slideSvgDown.done)="onAnimationDone($event)">
+    <svg width="652" height="846" viewBox="0 0 652 846" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M617 369.218C611.148 384.856 603.345 428.719 603.345 457.179C603.345 497.834 566.276 563.238 535.072 579.348C503.868 595.457 490.207 637.011 400.566 613.207C352.744 600.508 337.405 559.407 327.327 499.205C317.249 439.004 320.5 361.4 320.5 361.4"
+        stroke="black" stroke-width="2" stroke-linecap="round" />
+      <path d="M531 195.4C537.881 159.273 557.298 122.988 587.537 117.015C617.775 111.043 627.335 122.17 640 141.422"
+        stroke="black" stroke-width="2" stroke-linecap="round" />
+      <path
+        d="M537.204 578.614C548.766 603.031 552.806 644.7 544.662 690.82C536.518 736.939 544.077 786.085 544.662 846.4"
+        stroke="black" stroke-width="2" stroke-linecap="round" />
+      <path d="M291 478.4C271.446 488.142 267.016 503.994 214.741 548.547C162.466 593.099 61.6161 718.691 1 839.5"
+        stroke="black" stroke-width="2" stroke-linecap="round" />
+      <path d="M562 413.4C562 427.304 540.423 437.4 513.942 437.4C487.462 437.4 460 430.189 460 420.4" stroke="black"
+        stroke-width="2" stroke-linecap="round" />
+      <path
+        d="M567.798 463.4C569.749 477.991 570.432 511.348 560.966 534.044C551.5 556.74 531.688 570.4 499.483 570.4C467.278 570.4 438 552.891 438 500.619"
+        stroke="black" stroke-width="2" stroke-linecap="round" />
+      <path d="M494 609.4C463.699 645.871 403.863 659.103 364 678.4" stroke="black" stroke-width="2"
+        stroke-linecap="round" />
+      <path
+        d="M362 679.4C350.349 656.937 328.412 654.111 307.63 622.754C286.848 591.396 282.384 527.042 286.27 502.625C290.156 478.209 295.979 452.816 319.279 428.4"
+        stroke="black" stroke-width="2" stroke-linecap="round" />
+      <path d="M358 587.4C353.109 607.077 346.914 629.79 330.5 647.5" stroke="black" stroke-width="2"
+        stroke-linecap="round" />
+      <path d="M438 647.5C438 637.337 438 627.4 438 620.4" stroke="black" stroke-width="2" stroke-linecap="round" />
+      <path d="M641.358 142.4C649.997 156.081 648.637 184.422 645.997 197.127C643.358 209.831 629.999 223.513 615 228.4"
+        stroke="black" stroke-width="2" stroke-linecap="round" />
+      <path
+        d="M573 183.4C574.952 177.65 583.314 167.764 589.612 164.364C595.909 160.965 600.654 160.4 605.208 160.4C609.762 160.4 614.968 167.108 617 172.752"
+        stroke="black" stroke-width="2" stroke-linecap="round" />
+      <path
+        d="M427 203.481C425.48 200.381 418.689 192.607 410.901 190.438C403.113 188.269 393.621 189.592 388.206 193.528C382.791 197.465 376.97 207.183 376 215.4"
+        stroke="black" stroke-width="2" stroke-linecap="round" />
+      <path d="M474 340.842C443.73 294.81 393.491 324.192 381.505 344.759C369.519 365.327 365.613 410.379 381.505 419.4"
+        stroke="black" stroke-width="2" stroke-linecap="round" />
+      <path d="M363.205 678.4C363.205 688.094 364.994 717.421 363.205 742.9C361.416 768.378 351.585 824.592 346 846"
+        stroke="black" stroke-width="2" stroke-linecap="round" />
+      <path
+        d="M316.019 292.4C307.536 272.491 293.61 207.411 303.294 126.926C312.978 46.4414 376.91 17.4305 436.41 4.53377C495.911 -8.36298 560.593 20.9496 592.039 48.5942C623.485 76.2389 638.042 127.904 640 141.612"
+        stroke="black" stroke-width="2" />
+      <path d="M615.878 228.4C635.39 240.15 651 260.712 651 292.045C651 323.379 643.195 366.462 611 369.4"
+        stroke="black" stroke-width="2" />
+      <path
+        d="M309.5 272C297.337 266.952 284.468 270.779 275.037 279.777C270.027 284.556 266.174 290.839 263.818 298.07C261.462 305.3 260.677 313.255 261.531 321.23C263.839 342.789 279.571 365.914 302.873 367.192C309.52 367.557 314.734 366.439 320.5 363"
+        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <rect x="293.194" y="301.169" width="2.04651" height="39.0173" rx="1.02325"
+        transform="rotate(-30.8712 293.194 301.169)" fill="#222222" />
+      <rect x="304.143" y="317" width="2.57654" height="18.8073" rx="1.28827" transform="rotate(59.1288 304.143 317)"
+        fill="#222222" />
+      <path
+        d="M531.475 195.4C524.805 229.535 529.212 257.819 533.251 272.449C537.289 287.079 543.03 313.412 548.113 320.239C556.826 331.943 564.751 325.116 573.696 328.808C603.899 350.474 551.923 376.095 540.066 381.012C528.21 385.93 513.226 386.026 500.156 384.609C487.086 383.193 467.434 379.287 458.862 372.343C450.289 365.398 448.284 342.671 472.752 342.671"
+        stroke="black" stroke-width="2" stroke-linecap="round" />
+      <circle cx="363.893" cy="711.203" r="10.4247" fill="#222222" />
+      <circle cx="364" cy="711" r="8" fill="white" />
+      <circle cx="367" cy="711" r="2" fill="#222222" />
+      <circle cx="361" cy="711" r="2" fill="#222222" />
+      <circle cx="361.939" cy="752.251" r="10.4247" fill="#222222" />
+      <circle cx="356.425" cy="793.425" r="10.4247" fill="#222222" />
+      <circle cx="362" cy="752" r="8" fill="white" />
+      <circle cx="356.5" cy="793.5" r="8.5" fill="white" />
+      <path d="M354 600.4C368.651 614.864 413.777 627.4 438 627.4" stroke="black" stroke-width="2" />
+      <path d="M343 628.4C346.077 639.138 353.523 666.276 355 669.4" stroke="black" stroke-width="2" />
+      <path d="M437.619 628.4C440.839 639.007 422.954 650.414 424.5 653.5" stroke="black" stroke-width="2" />
+      <path d="M413.556 625.4L348.5 648.5M354.889 666.4L438 636.138" stroke="black" stroke-width="2" />
+      <path d="M373 611.4L348 620.4" stroke="black" stroke-width="2" />
+      <circle cx="365" cy="752" r="2" fill="#222222" />
+      <circle cx="359" cy="794" r="2" fill="#222222" />
+      <circle cx="359" cy="752" r="2" fill="#222222" />
+      <circle cx="353" cy="794" r="2" fill="#222222" />
+    </svg>
+  </div>
+</div>

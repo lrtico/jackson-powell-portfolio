@@ -1,0 +1,28 @@
+@use '@angular/material' as mat;
+@use 'styles_theme-colors.scss' as my-custom-theme;
+
+.route-rect {
+  border-radius: 9999px;
+  position: absolute;
+  left: 0;
+  width: 200%;
+  z-index: 10;
+
+  &.route-rect--blueberry {
+    background-color: map-get(my-custom-theme.$primary-palette, 80); /* Blueberry color */
+    height: 33.33%;
+    top: 0;
+  }
+
+  &.route-rect--strawberry {
+    background-color: map-get(my-custom-theme.$secondary-palette, 60); /* Strawberry color */
+    height: 33.33%;
+    top: 33.33%;
+  }
+
+  &.route-rect--chocolate {
+    background-color: map-get(my-custom-theme.$tertiary-palette, 10); /* Chocolate color */
+    height: 33.34%;
+    top: 66.66%;
+  }
+}
