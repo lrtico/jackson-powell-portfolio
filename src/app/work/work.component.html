@@ -31,4 +31,6 @@
       </svg>
     </div>
   </div>
+  <!-- Animation target element mirroring AboutComponent -->
+  <div class="work-svg" [@slideSvgDown]="svgState" (@slideSvgDown.done)="onAnimationDone($event)"></div>
 </div>

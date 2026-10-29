@@ -19,8 +19,7 @@
       fill="#711636" />
   </svg>
   <ul role="menu">
-    <li><a (click)="onAboutClick($event)" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page"
-        role="link">About</a></li>
+    <li><a (click)="onAboutClick($event)" [class.active]="router.url === '/about'" role="link">About</a></li>
     <li><a role="link">Contact</a></li>
     <li>
       <a (click)="onWorkClick($event)" [class.active]="router.url === '/work'">Work</a>
